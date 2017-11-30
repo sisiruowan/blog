@@ -7,19 +7,10 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you likes to quote or reproduce.</copyright>
-    <lastBuildDate>Thu, 30 Nov 2017 16:49:46 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 30 Nov 2017 08:34:55 +0800</lastBuildDate>
     
 	<atom:link href="https://sisiruowan.github.io/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Second</title>
-      <link>https://sisiruowan.github.io/post/second/</link>
-      <pubDate>Thu, 30 Nov 2017 16:49:46 +0800</pubDate>
-      
-      <guid>https://sisiruowan.github.io/post/second/</guid>
-      <description></description>
-    </item>
     
     <item>
       <title>Mysql 使用技巧</title>
