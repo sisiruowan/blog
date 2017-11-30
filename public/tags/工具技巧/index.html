@@ -5,7 +5,11 @@
   <meta charset="utf-8" />
 
   
-  <title>Hugo Blog (SEO Version)</title>
+  <title>
+  Tag → 工具技巧
+  
+   | Hugo Blog (SEO Version)
+</title>
 
   
   
@@ -31,7 +35,7 @@
 <meta name="generator" content="Hugo 0.31" />
 
 
-<link rel="canonical" href="https://sisiruowan.github.io/" />
+<link rel="canonical" href="https://sisiruowan.github.io/tags/%E5%B7%A5%E5%85%B7%E6%8A%80%E5%B7%A7/" />
 <link rel="alternative" href="https://sisiruowan.github.io/index.xml" title="永不满足的唐格拉底" type="application/atom+xml" />
 
 
@@ -66,6 +70,8 @@
 
 
 
+<link rel="stylesheet" href="//cdn.bootcss.com/video.js/6.2.8/alt/video-js-cdn.min.css" />
+
 <link rel="stylesheet" href="https://sisiruowan.github.io/css/bundle.css" />
 
 
@@ -99,7 +105,7 @@
   <header class="site-header">
   <img class="avatar" src="https://sisiruowan.github.io/img/avatar.jpg" alt="Avatar">
   
-  <h1 class="title">永不满足的唐格拉底</h1>
+  <h2 class="title">永不满足的唐格拉底</h2>
   
   <p class="subtitle">与其做一头心满意足的猪，不如做不满足的苏格拉底。——塔奇克马</p>
   <button class="menu-toggle" type="button">
@@ -114,14 +120,14 @@
       
         <li class="menu-item
             
-              is-active
-            
             
             ">
             <a href="https://sisiruowan.github.io/">首页</a>
           </li>
       
         <li class="menu-item
+            
+              is-active
             
             
             ">
@@ -221,23 +227,10 @@
 
   <section class="main post-list">
     <header class="list-header offscreen">
-      <h2 class="list-label">All Posts</h2>
+      <h2 class="list-label">Posts List</h2>
     </header>
     
     
-      
-        <article class="post-entry">
-  <header class="post-header">
-    <h3 class="post-title"><a href="https://sisiruowan.github.io/post/first/" class="post-link">First</a></h3>
-    <p class="post-meta">@AlexTang · Nov 30, 2017 · 0 min read</p>
-  </header>
-  
-  <p class="post-summary"></p>
-  <footer class="post-footer">
-    <a class="read-more" href="https://sisiruowan.github.io/post/first/">Read More →</a>
-  </footer>
-</article>
-
       
         <article class="post-entry">
   <header class="post-header">
@@ -358,19 +351,6 @@ import sys def get_cur_info(): print sys._getframe().f_code.co_filename #当前�
       
         <article class="post-entry">
   <header class="post-header">
-    <h3 class="post-title"><a href="https://sisiruowan.github.io/post/little-white-physics/01/" class="post-link">【相对论】第一篇 时间和空间</a></h3>
-    <p class="post-meta">@AlexTang · Nov 29, 2017 · 1 min read</p>
-  </header>
-  
-  <p class="post-summary">写点什么好呢？</p>
-  <footer class="post-footer">
-    <a class="read-more" href="https://sisiruowan.github.io/post/little-white-physics/01/">Read More →</a>
-  </footer>
-</article>
-
-      
-        <article class="post-entry">
-  <header class="post-header">
     <h3 class="post-title"><a href="https://sisiruowan.github.io/post/tools-skills/sys-cmd-and-env-cfg/" class="post-link">常用命令&amp;环境配置</a></h3>
     <p class="post-meta">@AlexTang · Nov 29, 2017 · 2 min read</p>
   </header>
@@ -395,6 +375,30 @@ cd到clone的repo目录 执行 virtualenv venv source venv/bin/activate pip inst
 </footer>
 
 
+
+<script async src="//cdn.bootcss.com/video.js/6.2.8/alt/video.novtt.min.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\[','\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+      extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    }
+  });
+</script>
+<script type="text/x-mathjax-config">
+  // Fix <code> tags after MathJax finishes running. This is a
+  // hack to overcome a shortcoming of Markdown. Discussion at
+  // https://github.com/mojombo/jekyll/issues/199
+  MathJax.Hub.Queue(() => {
+    MathJax.Hub.getAllJax().map(v => v.SourceElement().parentNode.className += ' has-jax');
+  });
+</script>
 
 <script src="https://sisiruowan.github.io/js/bundle.js"></script>
 

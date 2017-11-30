@@ -3,7 +3,63 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://sisiruowan.github.io/post/first/</loc>
+    <lastmod>2017-11-30T16:36:59+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sisiruowan.github.io/post/tools-skills/mysql-skill/</loc>
+    <lastmod>2017-11-30T08:34:55+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sisiruowan.github.io/post/tools-skills/git-skill/</loc>
+    <lastmod>2017-11-29T23:12:35+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sisiruowan.github.io/post/tools-skills/re-skill/</loc>
+    <lastmod>2017-11-29T22:51:59+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sisiruowan.github.io/post/tools-skills/linux-skill/</loc>
+    <lastmod>2017-11-29T22:47:55+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sisiruowan.github.io/post/tools-skills/sublime-python-env/</loc>
+    <lastmod>2017-11-29T22:39:15+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sisiruowan.github.io/post/tools-skills/python-skill/</loc>
+    <lastmod>2017-11-29T22:05:11+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sisiruowan.github.io/post/little-white-physics/01/</loc>
+    <lastmod>2017-11-29T21:38:36+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sisiruowan.github.io/post/tools-skills/sys-cmd-and-env-cfg/</loc>
+    <lastmod>2017-11-29T21:05:11+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sisiruowan.github.io/about/</loc>
+    <lastmod>2017-11-29T19:39:32+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://sisiruowan.github.io/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://sisiruowan.github.io/post/</loc>
+    <lastmod>2017-11-30T16:36:59+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -13,7 +69,26 @@
   </url>
   
   <url>
+    <loc>https://sisiruowan.github.io/tags/%E5%B7%A5%E5%85%B7%E6%8A%80%E5%B7%A7/</loc>
+    <lastmod>2017-11-30T08:34:55+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://sisiruowan.github.io/</loc>
+    <lastmod>2017-11-30T16:36:59+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://sisiruowan.github.io/tags/%E7%9B%B8%E5%AF%B9%E8%AE%BA/</loc>
+    <lastmod>2017-11-29T21:38:36+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://sisiruowan.github.io/tags/%E7%BB%99%E5%B0%8F%E7%99%BD%E7%9A%84%E7%89%A9%E7%90%86%E5%AD%A6/</loc>
+    <lastmod>2017-11-29T21:38:36+08:00</lastmod>
     <priority>0</priority>
   </url>
   

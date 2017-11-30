@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8" />
+
+  
+  <title>Git 使用技巧</title>
+
+  
+  
+
+
+
+
+
+  
+  <meta name="author" content="AlexTang" />
+  <meta name="description" content="整理自廖雪峰的git教程  指定路径建立仓库：
+cd PATH git init 添加文件
+git add filename git add . # 添加当前目录所有可追踪文件 添加修改&amp;amp;修改说明：
+git commit -m &amp;#34;the commit content&amp;#34; 查看代码库的状态：
+git status 连接远程库：
+git remote add origin https://github.com/sisiruowan/HighStockLearn.git git pull origin master git push origin master 查看具体文件的改动:
+git diff filename 版本还原：
+# 查看修改日志 git log # 精简输出： git log --pretty=oneline # 等号前后不要习惯性加空格 # 图像化查看log： git log --pretty=format:&amp;#34;%h %s&amp;#34; --graph # 启动还原指令 git reset --hard HEAD ^/^^/~100 # ^上一个版本 ^^上上个版本 ~100之前100个版本 git reset --hard commond ID # 强行通过commit的ID直接还原 暂存区是很重要的概念！！！ 所有修改通过add 加到暂存区， 再通过commit加到仓库中" />
+
+  
+  
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@twitter_username" />
+    <meta name="twitter:title" content="Git 使用技巧" />
+    <meta name="twitter:description" content="整理自廖雪峰的git教程  指定路径建立仓库：
+cd PATH git init 添加文件
+git add filename git add . # 添加当前目录所有可追踪文件 添加修改&amp;amp;修改说明：
+git commit -m &amp;#34;the commit content&amp;#34; 查看代码库的状态：
+git status 连接远程库：
+git remote add origin https://github.com/sisiruowan/HighStockLearn.git git pull origin master git push origin master 查看具体文件的改动:
+git diff filename 版本还原：
+# 查看修改日志 git log # 精简输出： git log --pretty=oneline # 等号前后不要习惯性加空格 # 图像化查看log： git log --pretty=format:&amp;#34;%h %s&amp;#34; --graph # 启动还原指令 git reset --hard HEAD ^/^^/~100 # ^上一个版本 ^^上上个版本 ~100之前100个版本 git reset --hard commond ID # 强行通过commit的ID直接还原 暂存区是很重要的概念！！！ 所有修改通过add 加到暂存区， 再通过commit加到仓库中" />
+    <meta name="twitter:image" content="https://sisiruowan.github.io/img/avatar.jpg" />
+  
+
+
+
+
+<meta name="generator" content="Hugo 0.31" />
+
+
+<link rel="canonical" href="https://sisiruowan.github.io/post/tools-skills/git-skill/" />
+<link rel="alternative" href="https://sisiruowan.github.io/index.xml" title="永不满足的唐格拉底" type="application/atom+xml" />
+
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+
+
+<meta name="robots" content="index,follow" />
+<meta name="referrer" content="origin-when-cross-origin" />
+<meta name="google-site-verification" content="_moDmnnBNVLBN1rzNxyGUGdPHE20YgbmrtzLIbxaWFc" />
+<meta name="msvalidate.01" content="22596E34341DD1D17D6022C44647E587" />
+
+
+
+
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="永不满足的唐格拉底" />
+<meta name="msapplication-tooltip" content="永不满足的唐格拉底" />
+<meta name='msapplication-navbutton-color' content="#5fbf5e" />
+<meta name="msapplication-TileColor" content="#5fbf5e" />
+<meta name="msapplication-TileImage" content="/img/tile-image-windows.png" />
+<link rel="icon" href="https://sisiruowan.github.io/img/favicon.ico" />
+<link rel="icon" type="image/png" sizes="16x16" href="https://sisiruowan.github.io/img/favicon-16x16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="https://sisiruowan.github.io/img/favicon-32x32.png" />
+<link rel="icon" sizes="192x192" href="https://sisiruowan.github.io/img/touch-icon-android.png" />
+<link rel="apple-touch-icon" href="https://sisiruowan.github.io/img/touch-icon-apple.png" />
+<link rel="mask-icon" href="https://sisiruowan.github.io/img/safari-pinned-tab.svg" color="#5fbf5e" />
+
+
+
+<link rel="stylesheet" href="//cdn.bootcss.com/video.js/6.2.8/alt/video-js-cdn.min.css" />
+
+<link rel="stylesheet" href="https://sisiruowan.github.io/css/bundle.css" />
+
+
+  
+  <!--[if lt IE 9]>
+    <script src="//cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <script src="//cdn.bootcss.com/video.js/6.2.8/ie8/videojs-ie8.min.js"></script>
+  <![endif]-->
+
+<!--[if lte IE 11]>
+    <script src="//cdn.bootcss.com/classlist/1.1.20170427/classList.min.js"></script>
+  <![endif]-->
+
+
+<script src="//cdn.bootcss.com/object-fit-images/3.2.3/ofi.min.js"></script>
+
+
+<script src="//cdn.bootcss.com/smooth-scroll/12.1.4/js/smooth-scroll.polyfills.min.js"></script>
+
+
+</head>
+  <body>
+    
+    <div class="suspension">
+      <a title="Go to top" class="to-top is-hide"><span class="icon icon-up"></span></a>
+      
+        
+        <a title="Go to comments" class="to-comment" href="#disqus_thread"><span class="icon icon-comment"></span></a>
+        
+      
+    </div>
+    
+    
+  <header class="site-header">
+  <img class="avatar" src="https://sisiruowan.github.io/img/avatar.jpg" alt="Avatar">
+  
+  <h2 class="title">永不满足的唐格拉底</h2>
+  
+  <p class="subtitle">与其做一头心满意足的猪，不如做不满足的苏格拉底。——塔奇克马</p>
+  <button class="menu-toggle" type="button">
+    <span class="icon icon-menu"></span>
+  </button>
+  <nav class="site-menu collapsed">
+    <h2 class="offscreen">Main Menu</h2>
+    <ul class="menu-list">
+      
+      
+      
+      
+        <li class="menu-item
+            
+            
+            
+              is-active
+            ">
+            <a href="https://sisiruowan.github.io/">首页</a>
+          </li>
+      
+        <li class="menu-item
+            
+            
+            ">
+            <a href="https://sisiruowan.github.io/tags/%E5%B7%A5%E5%85%B7%E6%8A%80%E5%B7%A7/">工具技巧</a>
+          </li>
+      
+        <li class="menu-item
+            
+            
+            ">
+            <a href="https://sisiruowan.github.io/tags/%E7%BB%99%E5%B0%8F%E7%99%BD%E7%9A%84%E7%89%A9%E7%90%86%E5%AD%A6/">给小白的物理学</a>
+          </li>
+      
+        <li class="menu-item
+            
+            
+            ">
+            <a href="https://sisiruowan.github.io/tags/">标签</a>
+          </li>
+      
+        <li class="menu-item
+            
+            
+            ">
+            <a href="https://github.com/sisiruowan">Github</a>
+          </li>
+      
+    </ul>
+  </nav>
+  <nav class="social-menu collapsed">
+    <h2 class="offscreen">Social Networks</h2>
+    <ul class="social-list">
+
+      
+      <li class="social-item">
+        <a href="mailto:1174779123@qq.com" title="Email"><span class="icon icon-email"></span></a>
+      </li>
+
+      
+      <li class="social-item">
+        <a href="//github.com/sisiruowan" title="GitHub"><span class="icon icon-github"></span></a>
+      </li>
+
+      <li class="social-item">
+        <a href="//twitter.com/twitter_username" title="Twitter"><span class="icon icon-twitter"></span></a>
+      </li>
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <li class="social-item">
+        <a href="//weibo.com/Achoo1416" title="Weibo"><span class="icon icon-weibo"></span></a>
+      </li>
+
+      <li class="social-item">
+        <a href="https://sisiruowan.github.io/img/qrcode.jpg" title="Wechat"><span class="icon icon-wechat"></span></a>
+      </li>
+
+      <li class="social-item">
+        <a href="//www.linkedin.com/in/linkedin_username" title="Linkedin"><span class="icon icon-linkedin"></span></a>
+      </li>
+
+      
+
+      
+
+      
+
+      <li class="social-item">
+        <a href="https://sisiruowan.github.io/index.xml"><span class="icon icon-rss" title="RSS"></span></a>
+      </li>
+
+    </ul>
+  </nav>
+</header>
+
+  <section class="main post-detail">
+    <header class="post-header">
+      <h1 class="post-title">Git 使用技巧</h1>
+      <p class="post-meta">@AlexTang · Nov 29, 2017 · 1 min read</p>
+    </header>
+    <article class="post-content">
+
+<h3 id="整理自-廖雪峰的git教程-https-www-liaoxuefeng-com-wiki-0013739516305929606dd18361248578c67b8067c8c017b000">整理自<a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000">廖雪峰的git教程</a></h3>
+
+<ol>
+<li><p>指定路径建立仓库：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd PATH
+git init</code></pre></div></li>
+
+<li><p>添加文件</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git add filename
+git add . # 添加当前目录所有可追踪文件</code></pre></div></li>
+
+<li><p>添加修改&amp;修改说明：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git commit -m <span style="color:#e6db74">&#34;the commit content&#34;</span></code></pre></div></li>
+
+<li><p>查看代码库的状态：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git status</code></pre></div></li>
+
+<li><p>连接远程库：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git remote add origin https://github.com/sisiruowan/HighStockLearn.git
+git pull origin master
+git push origin master</code></pre></div></li>
+
+<li><p>查看具体文件的改动:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git diff filename</code></pre></div></li>
+
+<li><p>版本还原：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 查看修改日志
+</span><span style="color:#75715e"></span>git log
+<span style="color:#75715e"># 精简输出：
+</span><span style="color:#75715e"></span>git log --pretty<span style="color:#f92672">=</span>oneline <span style="color:#75715e"># 等号前后不要习惯性加空格
+</span><span style="color:#75715e"># 图像化查看log：
+</span><span style="color:#75715e"></span>git log --pretty<span style="color:#f92672">=</span>format:<span style="color:#e6db74">&#34;%h %s&#34;</span> --graph
+<span style="color:#75715e"># 启动还原指令
+</span><span style="color:#75715e"></span>git reset --hard HEAD ^/^^/~100 <span style="color:#75715e"># ^上一个版本 ^^上上个版本 ~100之前100个版本
+</span><span style="color:#75715e"></span>git reset --hard commond ID # 强行通过commit的ID直接还原</code></pre></div></li>
+
+<li><p>暂存区是很重要的概念！！！
+所有修改通过add 加到暂存区， 再通过commit加到仓库中</p></li>
+
+<li><p>撤销操作：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git checkout -- filename  <span style="color:#75715e"># 直接把文件返回最近一次git commit或git add的状态
+</span><span style="color:#75715e"></span>git reset HEAD filename <span style="color:#75715e"># 撤销add的效果，清空暂存区的修改。
+</span><span style="color:#75715e"></span># 如果想要撤销commit后的结果，使用之前的版本和还原命令，依然是reset</code></pre></div></li>
+
+<li><p>文件删除：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git rm filename <span style="color:#75715e"># 直接把文件从硬盘删除
+</span><span style="color:#75715e"></span>git rm --cached filename # 取消对文件的追踪</code></pre></div></li>
+
+<li><p>分支的使用：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git branch dev <span style="color:#75715e">#创建分支
+</span><span style="color:#75715e"></span>git checkout dev <span style="color:#75715e">#切换到某个分支
+</span><span style="color:#75715e"></span>git checkout -b dev  # 一步指令，创建并切换到指定分支</code></pre></div></li>
+
+<li><p>分支的合并：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git merge branchname # 把指定分支的改变合并到当前的分支</code></pre></div></li>
+
+<li><p>分支的删除：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git branch -d branchname</code></pre></div></li>
+
+<li><p>冲突解决：合并分支时，先要保证两个分支中文件不存在重叠情况</p></li>
+
+<li><p>分支管理：</p>
+
+<ul>
+<li>如果不存在并列分支，那么合并时可以执行fast forward，快进模式</li>
+<li>但快进模式会造成分支丢失，因为是直接指针操作，没有建立新的文件版本。</li>
+
+<li><p>这时候，我们可以强行禁用快进模式</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git merge --no-ff -m <span style="color:#e6db74">&#34;.....&#34;</span> branchname</code></pre></div>
+<p>这里，<code>--no-ff</code> 就是强行禁用快进模式的指令，但是这个操作要加入<code>commit</code></p></li>
+
+<li><p>通常的开发策略是，所有人在dev分支上搞开发，等到dev 稳定后再合并到master，一次性发布稳定版本</p></li>
+</ul></li>
+
+<li><p>bug分支管理策略：</p>
+
+<ul>
+<li><p>前工作暂存起来，冻结dev分支，在之前的可靠版本上修复BUG，然后合并，再回复之前的工作:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git stash <span style="color:#75715e"># 把当前工作雪藏起来，无需add与commit操作
+</span><span style="color:#75715e"></span>git stash list <span style="color:#75715e"># 查看当前暂存的所有工作
+</span><span style="color:#75715e"></span>git stash apply stashname <span style="color:#75715e"># 恢复feature某个工作
+</span><span style="color:#75715e"></span>git stash drop stashname <span style="color:#75715e"># 删除某个stash
+</span><span style="color:#75715e"></span>git stash pop # 直接恢复并删除某暂存工作</code></pre></div></li>
+</ul></li>
+
+<li><p>feature分支：</p>
+
+<ul>
+<li>为每个功能建立一个feature分支，完成功能后合并到主分支</li>
+
+<li><p>但是，分支未merge的时候，为保留修改，不能删除，只能强制删除</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git branch -D branchname # 强行删除</code></pre></div></li>
+</ul></li>
+</ol>
+</article>
+    <footer class="post-footer">
+      
+      <ul class="post-tags">
+        
+          <li><a href="https://sisiruowan.github.io/tags/%E5%B7%A5%E5%85%B7%E6%8A%80%E5%B7%A7"><span class="tag">工具技巧</span></a></li>
+        
+      </ul>
+      
+      <p class="post-copyright">
+        © This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you likes to quote or reproduce.
+      </p>
+    </footer>
+    
+      <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "disqus_shortname" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      
+    
+  </section>
+  <footer class="site-footer">
+  <p>© 2017 永不满足的唐格拉底</p>
+  <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/laozhu/hugo-nuo" target="_blank">Nuo</a>.</p>
+  
+</footer>
+
+
+
+<script async src="//cdn.bootcss.com/video.js/6.2.8/alt/video.novtt.min.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\[','\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+      extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    }
+  });
+</script>
+<script type="text/x-mathjax-config">
+  // Fix <code> tags after MathJax finishes running. This is a
+  // hack to overcome a shortcoming of Markdown. Discussion at
+  // https://github.com/mojombo/jekyll/issues/199
+  MathJax.Hub.Queue(() => {
+    MathJax.Hub.getAllJax().map(v => v.SourceElement().parentNode.className += ' has-jax');
+  });
+</script>
+
+<script src="https://sisiruowan.github.io/js/bundle.js"></script>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-XXXXXXXX-X', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+  </body>
+</html>

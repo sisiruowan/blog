@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8" />
+
+  
+  <title>正则表达式技巧</title>
+
+  
+  
+
+
+
+
+
+  
+  <meta name="author" content="AlexTang" />
+  <meta name="description" content="\d 匹配一个数字：&#39;00\d&#39; 可以匹配 &#39;007&#39;、&#39;008&#39;等字符串 \w 匹配一个数字或者字母：&#39;\w\w\d&#39; 可以匹配 &#39;py3&#39; \s 匹配一个空格 . 匹配任何字符：&#39;py.&#39; 可以匹配 &#39;py2&#39; 或者&#39;py3&#39; 变长符号：
+ * 表示任意个（包括0） &#43; 表示至少一个 ? 表示0个或1个字符 {n} 表示n个字符 {n, m} 表示n - m个字符 示例：
+&amp;#39;\d{3}\s&#43;\d{3, 8}&amp;#39; # 三个数字&#43;至少一个空格&#43;3-8个数字，可以匹配任意空格分开的带区号的电话号码  使用方括号进行精确匹配：
+[0-9a-zA-Z\_] # 匹配一个字母数字或者下划线 [0-9a-zA-Z\_]&#43; # 可以匹配至少由一个字母数字下划线组成的字符串 [a-zA-Z\_][0-9a-zA-Z\_]* # 字母或下划线开头，加上任意个字母数字下划线字符，即python中的合法变量 [a-zA-Z\_][0-9a-zA-Z\_]{0,19} # 限制长度为20个字符的变量名 \[A|B\]代表 A或B，\[P|p\]ython代表&#39;Python&#39;或&#39;python&#39;
+ ^行开头匹配：^\d表示必须以数字开头
+ $行结尾匹配：$\d表示必须以数字结尾
+ 注意：python本身用\做转义，所以直接使用python字符串必须用\\表示斜杠，为此使用r&#39;str&#39;取消转义
+ re.match(r&#39;...&#39;,&#39;...&#39;)用于检测字符串是否匹配，不匹配返回None，匹配返回Match对象
+ re.split()切分字符串：
+s = &amp;#39;1 2 3 4&amp;#39; s.split(&amp;#39; &amp;#39;) &amp;gt;&amp;gt;&amp;gt;[&amp;#39;1&amp;#39;, &amp;#39;2&amp;#39;, &amp;#39;3&amp;#39;, &amp;#39;&amp;#39;, &amp;#39;&amp;#39;, &amp;#39;&amp;#39;, &amp;#39;4&amp;#39;] re." />
+
+  
+  
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@twitter_username" />
+    <meta name="twitter:title" content="正则表达式技巧" />
+    <meta name="twitter:description" content="\d 匹配一个数字：&#39;00\d&#39; 可以匹配 &#39;007&#39;、&#39;008&#39;等字符串 \w 匹配一个数字或者字母：&#39;\w\w\d&#39; 可以匹配 &#39;py3&#39; \s 匹配一个空格 . 匹配任何字符：&#39;py.&#39; 可以匹配 &#39;py2&#39; 或者&#39;py3&#39; 变长符号：
+ * 表示任意个（包括0） &#43; 表示至少一个 ? 表示0个或1个字符 {n} 表示n个字符 {n, m} 表示n - m个字符 示例：
+&amp;#39;\d{3}\s&#43;\d{3, 8}&amp;#39; # 三个数字&#43;至少一个空格&#43;3-8个数字，可以匹配任意空格分开的带区号的电话号码  使用方括号进行精确匹配：
+[0-9a-zA-Z\_] # 匹配一个字母数字或者下划线 [0-9a-zA-Z\_]&#43; # 可以匹配至少由一个字母数字下划线组成的字符串 [a-zA-Z\_][0-9a-zA-Z\_]* # 字母或下划线开头，加上任意个字母数字下划线字符，即python中的合法变量 [a-zA-Z\_][0-9a-zA-Z\_]{0,19} # 限制长度为20个字符的变量名 \[A|B\]代表 A或B，\[P|p\]ython代表&#39;Python&#39;或&#39;python&#39;
+ ^行开头匹配：^\d表示必须以数字开头
+ $行结尾匹配：$\d表示必须以数字结尾
+ 注意：python本身用\做转义，所以直接使用python字符串必须用\\表示斜杠，为此使用r&#39;str&#39;取消转义
+ re.match(r&#39;...&#39;,&#39;...&#39;)用于检测字符串是否匹配，不匹配返回None，匹配返回Match对象
+ re.split()切分字符串：
+s = &amp;#39;1 2 3 4&amp;#39; s.split(&amp;#39; &amp;#39;) &amp;gt;&amp;gt;&amp;gt;[&amp;#39;1&amp;#39;, &amp;#39;2&amp;#39;, &amp;#39;3&amp;#39;, &amp;#39;&amp;#39;, &amp;#39;&amp;#39;, &amp;#39;&amp;#39;, &amp;#39;4&amp;#39;] re." />
+    <meta name="twitter:image" content="https://sisiruowan.github.io/img/avatar.jpg" />
+  
+
+
+
+
+<meta name="generator" content="Hugo 0.31" />
+
+
+<link rel="canonical" href="https://sisiruowan.github.io/post/tools-skills/re-skill/" />
+<link rel="alternative" href="https://sisiruowan.github.io/index.xml" title="永不满足的唐格拉底" type="application/atom+xml" />
+
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+
+
+<meta name="robots" content="index,follow" />
+<meta name="referrer" content="origin-when-cross-origin" />
+<meta name="google-site-verification" content="_moDmnnBNVLBN1rzNxyGUGdPHE20YgbmrtzLIbxaWFc" />
+<meta name="msvalidate.01" content="22596E34341DD1D17D6022C44647E587" />
+
+
+
+
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="永不满足的唐格拉底" />
+<meta name="msapplication-tooltip" content="永不满足的唐格拉底" />
+<meta name='msapplication-navbutton-color' content="#5fbf5e" />
+<meta name="msapplication-TileColor" content="#5fbf5e" />
+<meta name="msapplication-TileImage" content="/img/tile-image-windows.png" />
+<link rel="icon" href="https://sisiruowan.github.io/img/favicon.ico" />
+<link rel="icon" type="image/png" sizes="16x16" href="https://sisiruowan.github.io/img/favicon-16x16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="https://sisiruowan.github.io/img/favicon-32x32.png" />
+<link rel="icon" sizes="192x192" href="https://sisiruowan.github.io/img/touch-icon-android.png" />
+<link rel="apple-touch-icon" href="https://sisiruowan.github.io/img/touch-icon-apple.png" />
+<link rel="mask-icon" href="https://sisiruowan.github.io/img/safari-pinned-tab.svg" color="#5fbf5e" />
+
+
+
+<link rel="stylesheet" href="//cdn.bootcss.com/video.js/6.2.8/alt/video-js-cdn.min.css" />
+
+<link rel="stylesheet" href="https://sisiruowan.github.io/css/bundle.css" />
+
+
+  
+  <!--[if lt IE 9]>
+    <script src="//cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <script src="//cdn.bootcss.com/video.js/6.2.8/ie8/videojs-ie8.min.js"></script>
+  <![endif]-->
+
+<!--[if lte IE 11]>
+    <script src="//cdn.bootcss.com/classlist/1.1.20170427/classList.min.js"></script>
+  <![endif]-->
+
+
+<script src="//cdn.bootcss.com/object-fit-images/3.2.3/ofi.min.js"></script>
+
+
+<script src="//cdn.bootcss.com/smooth-scroll/12.1.4/js/smooth-scroll.polyfills.min.js"></script>
+
+
+</head>
+  <body>
+    
+    <div class="suspension">
+      <a title="Go to top" class="to-top is-hide"><span class="icon icon-up"></span></a>
+      
+        
+        <a title="Go to comments" class="to-comment" href="#disqus_thread"><span class="icon icon-comment"></span></a>
+        
+      
+    </div>
+    
+    
+  <header class="site-header">
+  <img class="avatar" src="https://sisiruowan.github.io/img/avatar.jpg" alt="Avatar">
+  
+  <h2 class="title">永不满足的唐格拉底</h2>
+  
+  <p class="subtitle">与其做一头心满意足的猪，不如做不满足的苏格拉底。——塔奇克马</p>
+  <button class="menu-toggle" type="button">
+    <span class="icon icon-menu"></span>
+  </button>
+  <nav class="site-menu collapsed">
+    <h2 class="offscreen">Main Menu</h2>
+    <ul class="menu-list">
+      
+      
+      
+      
+        <li class="menu-item
+            
+            
+            
+              is-active
+            ">
+            <a href="https://sisiruowan.github.io/">首页</a>
+          </li>
+      
+        <li class="menu-item
+            
+            
+            ">
+            <a href="https://sisiruowan.github.io/tags/%E5%B7%A5%E5%85%B7%E6%8A%80%E5%B7%A7/">工具技巧</a>
+          </li>
+      
+        <li class="menu-item
+            
+            
+            ">
+            <a href="https://sisiruowan.github.io/tags/%E7%BB%99%E5%B0%8F%E7%99%BD%E7%9A%84%E7%89%A9%E7%90%86%E5%AD%A6/">给小白的物理学</a>
+          </li>
+      
+        <li class="menu-item
+            
+            
+            ">
+            <a href="https://sisiruowan.github.io/tags/">标签</a>
+          </li>
+      
+        <li class="menu-item
+            
+            
+            ">
+            <a href="https://github.com/sisiruowan">Github</a>
+          </li>
+      
+    </ul>
+  </nav>
+  <nav class="social-menu collapsed">
+    <h2 class="offscreen">Social Networks</h2>
+    <ul class="social-list">
+
+      
+      <li class="social-item">
+        <a href="mailto:1174779123@qq.com" title="Email"><span class="icon icon-email"></span></a>
+      </li>
+
+      
+      <li class="social-item">
+        <a href="//github.com/sisiruowan" title="GitHub"><span class="icon icon-github"></span></a>
+      </li>
+
+      <li class="social-item">
+        <a href="//twitter.com/twitter_username" title="Twitter"><span class="icon icon-twitter"></span></a>
+      </li>
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <li class="social-item">
+        <a href="//weibo.com/Achoo1416" title="Weibo"><span class="icon icon-weibo"></span></a>
+      </li>
+
+      <li class="social-item">
+        <a href="https://sisiruowan.github.io/img/qrcode.jpg" title="Wechat"><span class="icon icon-wechat"></span></a>
+      </li>
+
+      <li class="social-item">
+        <a href="//www.linkedin.com/in/linkedin_username" title="Linkedin"><span class="icon icon-linkedin"></span></a>
+      </li>
+
+      
+
+      
+
+      
+
+      <li class="social-item">
+        <a href="https://sisiruowan.github.io/index.xml"><span class="icon icon-rss" title="RSS"></span></a>
+      </li>
+
+    </ul>
+  </nav>
+</header>
+
+  <section class="main post-detail">
+    <header class="post-header">
+      <h1 class="post-title">正则表达式技巧</h1>
+      <p class="post-meta">@AlexTang · Nov 29, 2017 · 1 min read</p>
+    </header>
+    <article class="post-content"><ol>
+<li><code>\d</code> 匹配一个数字：<code>'00\d'</code> 可以匹配 <code>'007'</code>、<code>'008'</code>等字符串</li>
+<li><code>\w</code> 匹配一个数字或者字母：<code>'\w\w\d'</code> 可以匹配 <code>'py3'</code></li>
+<li><code>\s</code> 匹配一个空格</li>
+<li><code>.</code> 匹配任何字符：<code>'py.'</code> 可以匹配 <code>'py2'</code> 或者<code>'py3'</code></li>
+
+<li><p>变长符号：</p>
+
+<ul>
+<li><code>*</code> 表示任意个（包括0）</li>
+<li><code>+</code> 表示至少一个</li>
+<li><code>?</code> 表示0个或1个字符</li>
+<li><code>{n}</code> 表示n个字符</li>
+<li><code>{n, m}</code> 表示n - m个字符</li>
+
+<li><p>示例：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;\d{3}\s+\d{3, 8}&#39;</span>
+<span style="color:#75715e"># 三个数字+至少一个空格+3-8个数字，可以匹配任意空格分开的带区号的电话号码</span></code></pre></div></li>
+</ul></li>
+
+<li><p>使用方括号进行精确匹配：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">[<span style="color:#ae81ff">0</span><span style="color:#f92672">-</span><span style="color:#ae81ff">9</span>a<span style="color:#f92672">-</span>zA<span style="color:#f92672">-</span>Z\_] <span style="color:#75715e"># 匹配一个字母数字或者下划线</span>
+[<span style="color:#ae81ff">0</span><span style="color:#f92672">-</span><span style="color:#ae81ff">9</span>a<span style="color:#f92672">-</span>zA<span style="color:#f92672">-</span>Z\_]<span style="color:#f92672">+</span> <span style="color:#75715e"># 可以匹配至少由一个字母数字下划线组成的字符串</span>
+[a<span style="color:#f92672">-</span>zA<span style="color:#f92672">-</span>Z\_][<span style="color:#ae81ff">0</span><span style="color:#f92672">-</span><span style="color:#ae81ff">9</span>a<span style="color:#f92672">-</span>zA<span style="color:#f92672">-</span>Z\_]<span style="color:#f92672">*</span> <span style="color:#75715e"># 字母或下划线开头，加上任意个字母数字下划线字符，即python中的合法变量</span>
+[a<span style="color:#f92672">-</span>zA<span style="color:#f92672">-</span>Z\_][<span style="color:#ae81ff">0</span><span style="color:#f92672">-</span><span style="color:#ae81ff">9</span>a<span style="color:#f92672">-</span>zA<span style="color:#f92672">-</span>Z\_]{<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">19</span>} <span style="color:#75715e"># 限制长度为20个字符的变量名</span></code></pre></div></li>
+
+<li><p><code>\[A|B\]</code>代表 A或B，<code>\[P|p\]ython</code>代表<code>'Python'</code>或<code>'python'</code></p></li>
+
+<li><p><code>^</code>行开头匹配：<code>^\d</code>表示必须以数字开头</p></li>
+
+<li><p><code>$</code>行结尾匹配：<code>$\d</code>表示必须以数字结尾</p></li>
+
+<li><p>注意：python本身用<code>\</code>做转义，所以直接使用python字符串必须用<code>\\</code>表示斜杠，为此使用<code>r'str'</code>取消转义</p></li>
+
+<li><p><code>re.match(r'...','...')</code>用于检测字符串是否匹配，不匹配返回<code>None</code>，匹配返回<code>Match</code>对象</p></li>
+
+<li><p><code>re.split()</code>切分字符串：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">s <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;1 2 3   4&#39;</span>
+s<span style="color:#f92672">.</span>split(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39; &#39;</span>)
+<span style="color:#f92672">&gt;&gt;&gt;</span>[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;1&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;2&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;3&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;4&#39;</span>]
+re<span style="color:#f92672">.</span>split(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;\s+&#39;</span>, s)
+<span style="color:#f92672">&gt;&gt;&gt;</span>[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;1&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;2&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;3&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;4&#39;</span>]</code></pre></div></li>
+
+<li><p>分组：<code>()</code>定义要提取的子串组，直接从匹配中提取子串</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">m <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>match(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;^(\d{3})-(\d{3,8})$&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;010-12345&#39;</span>)
+m<span style="color:#f92672">.</span>group(<span style="color:#ae81ff">0</span>)
+<span style="color:#f92672">&gt;&gt;&gt;</span><span style="color:#ae81ff">010</span><span style="color:#f92672">-</span><span style="color:#ae81ff">12345</span>
+m<span style="color:#f92672">.</span>group(<span style="color:#ae81ff">1</span>)
+<span style="color:#f92672">&gt;&gt;&gt;</span><span style="color:#ae81ff">010</span>
+m<span style="color:#f92672">.</span>group(<span style="color:#ae81ff">2</span>)
+<span style="color:#f92672">&gt;&gt;&gt;</span><span style="color:#ae81ff">12345</span></code></pre></div></li>
+
+<li><p>识别日期：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">time_format <span style="color:#f92672">=</span> <span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;^([0-2][0-9] | [0-9]):([0-5][0-9]|[0-9]):([0-5][0-9]|[0-9])$&#39;</span>
+m <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>match(time_fromat, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;23:00:50&#39;</span>)
+m<span style="color:#f92672">.</span>group(<span style="color:#ae81ff">1</span>)      
+<span style="color:#f92672">&gt;&gt;&gt;</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;23&#39;</span>
+m<span style="color:#f92672">.</span>group(<span style="color:#ae81ff">2</span>)      
+<span style="color:#f92672">&gt;&gt;&gt;</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;00&#39;</span>
+m<span style="color:#f92672">.</span>group(<span style="color:#ae81ff">3</span>)      
+<span style="color:#f92672">&gt;&gt;&gt;</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;50&#39;</span></code></pre></div></li>
+
+<li><p>贪婪匹配问题：</p>
+
+<ul>
+<li><p>由于贪婪匹配<code>\d+</code>总会匹配尽可能多的字符，所以导致<code>0*</code> 匹配不到应有的内容:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;&gt;</span> re<span style="color:#f92672">.</span>match(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;^(\d+)(0*)$&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;12300&#39;</span>)<span style="color:#f92672">.</span>groups()
+<span style="color:#f92672">&gt;&gt;&gt;</span> (<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;12300&#39;</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;&#39;</span>) </code></pre></div></li>
+
+<li><p>要消除贪婪匹配的影响，使用<code>?</code>：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">re<span style="color:#f92672">.</span>match(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;^(\d+?)(0*)$&#39;</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;12300&#39;</span>)<span style="color:#f92672">.</span>groups()
+<span style="color:#f92672">&gt;&gt;</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;123&#39;</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;00&#39;</span>)</code></pre></div></li>
+</ul></li>
+
+<li><p><code>re</code>模块匹配字符串时，会先编译正则表达式，再用之去匹配字符串，当某一表达式重复多次使用时，重复编译效率低下，因此我们可以使用提前编译好的正则表达式，提高效率。</p></li>
+
+<li><p>匹配字符串中的pattern替换为新字符串：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">re<span style="color:#f92672">.</span>sub(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;\d+&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;int_t&#39;</span>, <span style="color:#e6db74">u</span><span style="color:#e6db74">&#39;python有2个版本&#39;</span>)</code></pre></div></li>
+
+<li><p>如果可以，尽量使用<code>str.replace()</code>，因为后者效率高得多，<a href="https://stackoverflow.com/questions/5668947/use-pythons-string-replace-vs-re-sub">前者耗时数us，后者耗时数ns</a>。</p></li>
+
+<li><p><a href="https://blogs.msdn.microsoft.com/jaredpar/2008/10/15/regular-expression-limitations/">正则表达式有缺陷：</a></p>
+
+<ul>
+<li><p>无法递归提取：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># 无法只提取字符串注释的文字部分</span>
+<span style="color:#f92672">/*</span> <span style="color:#f92672">/*</span> this <span style="color:#f92672">is</span> a comment <span style="color:#f92672">*/</span> <span style="color:#f92672">*/</span></code></pre></div></li>
+
+<li><p>任何有递归可能的表达式都不能完全用正则匹配</p>
+
+<ul>
+<li>能匹配：
+
+<ul>
+<li>python字符串</li>
+<li>python字符串常量</li>
+<li>XML属性</li>
+<li>文件路径</li>
+<li>邮箱地址</li>
+</ul></li>
+<li>不能匹配：
+
+<ul>
+<li>XML元素</li>
+<li>C语言数学表达式</li>
+<li>有效正则表达式</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ol>
+</article>
+    <footer class="post-footer">
+      
+      <ul class="post-tags">
+        
+          <li><a href="https://sisiruowan.github.io/tags/%E5%B7%A5%E5%85%B7%E6%8A%80%E5%B7%A7"><span class="tag">工具技巧</span></a></li>
+        
+      </ul>
+      
+      <p class="post-copyright">
+        © This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you likes to quote or reproduce.
+      </p>
+    </footer>
+    
+      <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "disqus_shortname" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      
+    
+  </section>
+  <footer class="site-footer">
+  <p>© 2017 永不满足的唐格拉底</p>
+  <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/laozhu/hugo-nuo" target="_blank">Nuo</a>.</p>
+  
+</footer>
+
+
+
+<script async src="//cdn.bootcss.com/video.js/6.2.8/alt/video.novtt.min.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\[','\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+      extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    }
+  });
+</script>
+<script type="text/x-mathjax-config">
+  // Fix <code> tags after MathJax finishes running. This is a
+  // hack to overcome a shortcoming of Markdown. Discussion at
+  // https://github.com/mojombo/jekyll/issues/199
+  MathJax.Hub.Queue(() => {
+    MathJax.Hub.getAllJax().map(v => v.SourceElement().parentNode.className += ' has-jax');
+  });
+</script>
+
+<script src="https://sisiruowan.github.io/js/bundle.js"></script>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-XXXXXXXX-X', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+  </body>
+</html>

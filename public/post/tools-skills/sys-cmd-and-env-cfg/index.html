@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8" />
+
+  
+  <title>常用命令&amp;环境配置</title>
+
+  
+  
+
+
+
+
+
+  
+  <meta name="author" content="AlexTang" />
+  <meta name="description" content="Linux&amp;amp;Mac  mysql操作
+# 启动mysql mysql.server start # 登录命令 mysql -u root -pxxx /home/works/db/mysql/bin/mysql -h xxx.xxx.xxx.xxx -P 3306 -u root -pxxx -U im_saas_db /home/works/db/mysql/bin/mysql -h xxx.xxx.xxx.xxx -P 3306 -u root -pxxx -U xxx_db # 导出数据库 mysqldump -u root -pxxx xxx_db &amp;gt; xxx_db_dump.txt mysql -u root -p huishi_db &amp;lt; huishi_db_dump.txt # 安全删除 SET SQL_SAFE_UPDATES = 0; conda启用虚拟环境:
+conda create -n tang requirements source activate tang source deactivate tang virtualenv启用虚拟环境：
+cd到clone的repo目录 执行 virtualenv venv source venv/bin/activate pip install -r requirements." />
+
+  
+  
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@twitter_username" />
+    <meta name="twitter:title" content="常用命令&amp;环境配置" />
+    <meta name="twitter:description" content="Linux&amp;amp;Mac  mysql操作
+# 启动mysql mysql.server start # 登录命令 mysql -u root -pxxx /home/works/db/mysql/bin/mysql -h xxx.xxx.xxx.xxx -P 3306 -u root -pxxx -U im_saas_db /home/works/db/mysql/bin/mysql -h xxx.xxx.xxx.xxx -P 3306 -u root -pxxx -U xxx_db # 导出数据库 mysqldump -u root -pxxx xxx_db &amp;gt; xxx_db_dump.txt mysql -u root -p huishi_db &amp;lt; huishi_db_dump.txt # 安全删除 SET SQL_SAFE_UPDATES = 0; conda启用虚拟环境:
+conda create -n tang requirements source activate tang source deactivate tang virtualenv启用虚拟环境：
+cd到clone的repo目录 执行 virtualenv venv source venv/bin/activate pip install -r requirements." />
+    <meta name="twitter:image" content="https://sisiruowan.github.io/img/avatar.jpg" />
+  
+
+
+
+
+<meta name="generator" content="Hugo 0.31" />
+
+
+<link rel="canonical" href="https://sisiruowan.github.io/post/tools-skills/sys-cmd-and-env-cfg/" />
+<link rel="alternative" href="https://sisiruowan.github.io/index.xml" title="永不满足的唐格拉底" type="application/atom+xml" />
+
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+
+
+<meta name="robots" content="index,follow" />
+<meta name="referrer" content="origin-when-cross-origin" />
+<meta name="google-site-verification" content="_moDmnnBNVLBN1rzNxyGUGdPHE20YgbmrtzLIbxaWFc" />
+<meta name="msvalidate.01" content="22596E34341DD1D17D6022C44647E587" />
+
+
+
+
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="永不满足的唐格拉底" />
+<meta name="msapplication-tooltip" content="永不满足的唐格拉底" />
+<meta name='msapplication-navbutton-color' content="#5fbf5e" />
+<meta name="msapplication-TileColor" content="#5fbf5e" />
+<meta name="msapplication-TileImage" content="/img/tile-image-windows.png" />
+<link rel="icon" href="https://sisiruowan.github.io/img/favicon.ico" />
+<link rel="icon" type="image/png" sizes="16x16" href="https://sisiruowan.github.io/img/favicon-16x16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="https://sisiruowan.github.io/img/favicon-32x32.png" />
+<link rel="icon" sizes="192x192" href="https://sisiruowan.github.io/img/touch-icon-android.png" />
+<link rel="apple-touch-icon" href="https://sisiruowan.github.io/img/touch-icon-apple.png" />
+<link rel="mask-icon" href="https://sisiruowan.github.io/img/safari-pinned-tab.svg" color="#5fbf5e" />
+
+
+
+<link rel="stylesheet" href="//cdn.bootcss.com/video.js/6.2.8/alt/video-js-cdn.min.css" />
+
+<link rel="stylesheet" href="https://sisiruowan.github.io/css/bundle.css" />
+
+
+  
+  <!--[if lt IE 9]>
+    <script src="//cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <script src="//cdn.bootcss.com/video.js/6.2.8/ie8/videojs-ie8.min.js"></script>
+  <![endif]-->
+
+<!--[if lte IE 11]>
+    <script src="//cdn.bootcss.com/classlist/1.1.20170427/classList.min.js"></script>
+  <![endif]-->
+
+
+<script src="//cdn.bootcss.com/object-fit-images/3.2.3/ofi.min.js"></script>
+
+
+<script src="//cdn.bootcss.com/smooth-scroll/12.1.4/js/smooth-scroll.polyfills.min.js"></script>
+
+
+</head>
+  <body>
+    
+    <div class="suspension">
+      <a title="Go to top" class="to-top is-hide"><span class="icon icon-up"></span></a>
+      
+        
+        <a title="Go to comments" class="to-comment" href="#disqus_thread"><span class="icon icon-comment"></span></a>
+        
+      
+    </div>
+    
+    
+  <header class="site-header">
+  <img class="avatar" src="https://sisiruowan.github.io/img/avatar.jpg" alt="Avatar">
+  
+  <h2 class="title">永不满足的唐格拉底</h2>
+  
+  <p class="subtitle">与其做一头心满意足的猪，不如做不满足的苏格拉底。——塔奇克马</p>
+  <button class="menu-toggle" type="button">
+    <span class="icon icon-menu"></span>
+  </button>
+  <nav class="site-menu collapsed">
+    <h2 class="offscreen">Main Menu</h2>
+    <ul class="menu-list">
+      
+      
+      
+      
+        <li class="menu-item
+            
+            
+            
+              is-active
+            ">
+            <a href="https://sisiruowan.github.io/">首页</a>
+          </li>
+      
+        <li class="menu-item
+            
+            
+            ">
+            <a href="https://sisiruowan.github.io/tags/%E5%B7%A5%E5%85%B7%E6%8A%80%E5%B7%A7/">工具技巧</a>
+          </li>
+      
+        <li class="menu-item
+            
+            
+            ">
+            <a href="https://sisiruowan.github.io/tags/%E7%BB%99%E5%B0%8F%E7%99%BD%E7%9A%84%E7%89%A9%E7%90%86%E5%AD%A6/">给小白的物理学</a>
+          </li>
+      
+        <li class="menu-item
+            
+            
+            ">
+            <a href="https://sisiruowan.github.io/tags/">标签</a>
+          </li>
+      
+        <li class="menu-item
+            
+            
+            ">
+            <a href="https://github.com/sisiruowan">Github</a>
+          </li>
+      
+    </ul>
+  </nav>
+  <nav class="social-menu collapsed">
+    <h2 class="offscreen">Social Networks</h2>
+    <ul class="social-list">
+
+      
+      <li class="social-item">
+        <a href="mailto:1174779123@qq.com" title="Email"><span class="icon icon-email"></span></a>
+      </li>
+
+      
+      <li class="social-item">
+        <a href="//github.com/sisiruowan" title="GitHub"><span class="icon icon-github"></span></a>
+      </li>
+
+      <li class="social-item">
+        <a href="//twitter.com/twitter_username" title="Twitter"><span class="icon icon-twitter"></span></a>
+      </li>
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <li class="social-item">
+        <a href="//weibo.com/Achoo1416" title="Weibo"><span class="icon icon-weibo"></span></a>
+      </li>
+
+      <li class="social-item">
+        <a href="https://sisiruowan.github.io/img/qrcode.jpg" title="Wechat"><span class="icon icon-wechat"></span></a>
+      </li>
+
+      <li class="social-item">
+        <a href="//www.linkedin.com/in/linkedin_username" title="Linkedin"><span class="icon icon-linkedin"></span></a>
+      </li>
+
+      
+
+      
+
+      
+
+      <li class="social-item">
+        <a href="https://sisiruowan.github.io/index.xml"><span class="icon icon-rss" title="RSS"></span></a>
+      </li>
+
+    </ul>
+  </nav>
+</header>
+
+  <section class="main post-detail">
+    <header class="post-header">
+      <h1 class="post-title">常用命令&amp;环境配置</h1>
+      <p class="post-meta">@AlexTang · Nov 29, 2017 · 2 min read</p>
+    </header>
+    <article class="post-content">
+
+<h1 id="linux-mac">Linux&amp;Mac</h1>
+
+<ul>
+<li><p>mysql操作</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 启动mysql
+</span><span style="color:#75715e"></span>mysql.server start
+<span style="color:#75715e"># 登录命令
+</span><span style="color:#75715e"></span>mysql -u root -pxxx
+/home/works/db/mysql/bin/mysql -h xxx.xxx.xxx.xxx -P <span style="color:#ae81ff">3306</span> -u root -pxxx -U im_saas_db
+/home/works/db/mysql/bin/mysql -h xxx.xxx.xxx.xxx -P <span style="color:#ae81ff">3306</span> -u root -pxxx -U  xxx_db
+<span style="color:#75715e"># 导出数据库
+</span><span style="color:#75715e"></span>mysqldump -u root -pxxx xxx_db &gt; xxx_db_dump.txt
+mysql -u root -p huishi_db &lt; huishi_db_dump.txt
+<span style="color:#75715e"># 安全删除
+</span><span style="color:#75715e"></span>SET SQL_SAFE_UPDATES <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;</code></pre></div></li>
+
+<li><p>conda启用虚拟环境:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">conda create -n tang requirements
+source activate tang
+source deactivate tang</code></pre></div></li>
+
+<li><p>virtualenv启用虚拟环境：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd到clone的repo目录 执行 
+virtualenv venv
+source venv/bin/activate
+pip install -r requirements.txt
+deactivate</code></pre></div></li>
+
+<li><p>python3创建虚拟环境</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">python -m venv ./venv
+source venv/bin/activate</code></pre></div></li>
+
+<li><p>SFTP停止进程:</p>
+
+<p><kbd>ctrl+cmd+u+x</kbd></p></li>
+
+<li><p>查找文本中的字符：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sed -n <span style="color:#e6db74">&#39;1, 1000p&#39;</span> data/dialog.data | grep <span style="color:#e6db74">&#39;%%&#39;</span>
+fgrep <span style="color:#e6db74">&#39;rsp match sug&#39;</span> <span style="color:#e6db74">&#39;log/main.log&#39;</span>| head -3</code></pre></div></li>
+
+<li><p>查找文件名</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">find . -name <span style="color:#e6db74">&#39;my*&#39;</span></code></pre></div></li>
+
+<li><p>查找正在运行的进程：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ps -ef |grep python</code></pre></div></li>
+
+<li><p>后台运行程序：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nohup python xxx.py <span style="color:#ae81ff">1111</span> &gt;out <span style="color:#ae81ff">2</span>&gt;err &amp;
+jobs
+fg x
+kill xxxxx</code></pre></div></li>
+
+<li><p>less命令：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 搜索
+</span><span style="color:#75715e"></span>/
+<span style="color:#75715e"># 只显示包含搜索内容行
+</span><span style="color:#75715e"></span>&amp;</code></pre></div></li>
+
+<li><p>crontab定时任务</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">crontab -e</code></pre></div></li>
+
+<li><p>其他：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 查看文件行数
+</span><span style="color:#75715e"></span>wc -l filename  
+<span style="color:#75715e"># 查看端口占用
+</span><span style="color:#75715e"></span>lsof -i:8130  
+<span style="color:#75715e"># 查看文件空间占用 
+</span><span style="color:#75715e"></span>du -ah dir 
+<span style="color:#75715e"># 查看ip地址信息     
+</span><span style="color:#75715e"></span>curl ip.gs    
+<span style="color:#75715e"># 合并文件  
+</span><span style="color:#75715e"></span>cat file1 file2 dir/* &gt; file3 </code></pre></div></li>
+</ul>
+
+<h1 id="es">ES</h1>
+
+<ul>
+<li><p>查看分析器效果：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl -XGET <span style="color:#e6db74">&#39;localhost:9200/wulai_ques_ans_v0/_analyze?field=tag&amp;pretty&#39;</span> -d <span style="color:#e6db74">&#39;今天的天气如何？&#39;</span> -H <span style="color:#e6db74">&#39;Content-Type: text/plain&#39;</span></code></pre></div></li>
+
+<li><p>查看mapping效果</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl -XGET <span style="color:#e6db74">&#39;http://127.0.0.1:9203/wulai_ques_ans_v0/_settings,_mappings?pretty&#39;</span></code></pre></div></li>
+
+<li><p>查看索引列表</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl -XGET <span style="color:#ae81ff">127</span>.0.0.1:9200/_cat/indices</code></pre></div></li>
+</ul>
+
+<h1 id="mysql">Mysql</h1>
+
+<ul>
+<li><p>导出数据到文件：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-mysql" data-lang="mysql"><span style="color:#75715e"># 导出数据到文件
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span>   <span style="color:#66d9ef">where</span> zk_frozen<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> <span style="color:#66d9ef">into</span> <span style="color:#66d9ef">outfile</span> <span style="color:#e6db74">&#39;/home/works/tangziyi/zhiku.txt&#39;</span> fields <span style="color:#66d9ef">terminated</span> <span style="color:#66d9ef">by</span> <span style="color:#e6db74">&#39;`&#39;</span> <span style="color:#66d9ef">lines</span> <span style="color:#66d9ef">terminated</span> <span style="color:#66d9ef">by</span> <span style="color:#e6db74">&#39;\n&#39;</span>;</code></pre></div></li>
+</ul>
+
+<h1 id="supervisor">Supervisor</h1>
+
+<ul>
+<li><p>一般运行流程：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 启动进程
+</span><span style="color:#75715e"></span>supervisord -c conf/sup.qsearch.conf
+<span style="color:#75715e"># 进入控制台
+</span><span style="color:#75715e"></span>supervisorctl -c conf/sup.qsearch.conf</code></pre></div></li>
+</ul>
+
+<h1 id="mac-os">Mac OS</h1>
+
+<ul>
+<li><p>禁用、开启<code>.DS_Store</code>文件生成:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 启用、删除 .DS_Store
+</span><span style="color:#75715e"></span>defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool TRUE
+defaults delete com.apple.desktopservices DSDontWriteNetworkStores</code></pre></div></li>
+
+<li><p>homebrew切换源:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd /usr/local/HomeBrew
+git remote set-url origin https://git.coding.net/homebrew/homebrew.git
+cd Library/Taps/homebrew/homebrew-core
+git remote set-url origin https://git.coding.net/homebrew/homebrew-core.git
+git remote set-url origin https://github.com/Homebrew/homebrew-core.git</code></pre></div></li>
+
+<li><p>终端移动光标</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ctrl+a : 光标移动到行首
+ctrl+e : 光标移动到行尾
+ctrl+u : 删除光标前所有字符
+ctrl+k : 删除光标后所有字符
+ctrl+l : 清屏，<span style="color:#f92672">=</span> clear</code></pre></div></li>
+</ul>
+</article>
+    <footer class="post-footer">
+      
+      <ul class="post-tags">
+        
+          <li><a href="https://sisiruowan.github.io/tags/%E5%B7%A5%E5%85%B7%E6%8A%80%E5%B7%A7"><span class="tag">工具技巧</span></a></li>
+        
+      </ul>
+      
+      <p class="post-copyright">
+        © This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you likes to quote or reproduce.
+      </p>
+    </footer>
+    
+      <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "disqus_shortname" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      
+    
+  </section>
+  <footer class="site-footer">
+  <p>© 2017 永不满足的唐格拉底</p>
+  <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/laozhu/hugo-nuo" target="_blank">Nuo</a>.</p>
+  
+</footer>
+
+
+
+<script async src="//cdn.bootcss.com/video.js/6.2.8/alt/video.novtt.min.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\[','\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+      extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    }
+  });
+</script>
+<script type="text/x-mathjax-config">
+  // Fix <code> tags after MathJax finishes running. This is a
+  // hack to overcome a shortcoming of Markdown. Discussion at
+  // https://github.com/mojombo/jekyll/issues/199
+  MathJax.Hub.Queue(() => {
+    MathJax.Hub.getAllJax().map(v => v.SourceElement().parentNode.className += ' has-jax');
+  });
+</script>
+
+<script src="https://sisiruowan.github.io/js/bundle.js"></script>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-XXXXXXXX-X', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+  </body>
+</html>

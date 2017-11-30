@@ -5,7 +5,10 @@
   <meta charset="utf-8" />
 
   
-  <title>Hugo Blog (SEO Version)</title>
+  <title>
+  Posts
+   | Hugo Blog (SEO Version)
+</title>
 
   
   
@@ -16,14 +19,16 @@
 
   
   <meta name="author" content="Alex Tang" />
-  <meta name="description" content="记录生活与思考，分享点有价值的东西，做好奇心的播种者。" />
+  <meta name="description" content="" />
 
   
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:site" content="@twitter_username" />
-  <meta name="twitter:title" content="Hugo Blog (SEO Version)" />
-  <meta name="twitter:description" content="记录生活与思考，分享点有价值的东西，做好奇心的播种者。" />
-  <meta name="twitter:image" content="https://sisiruowan.github.io/img/avatar.jpg" />
+  
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@twitter_username" />
+    <meta name="twitter:title" content="Posts" />
+    <meta name="twitter:description" content="" />
+    <meta name="twitter:image" content="https://sisiruowan.github.io/img/avatar.jpg" />
+  
 
 
 
@@ -31,7 +36,7 @@
 <meta name="generator" content="Hugo 0.31" />
 
 
-<link rel="canonical" href="https://sisiruowan.github.io/" />
+<link rel="canonical" href="https://sisiruowan.github.io/post/" />
 <link rel="alternative" href="https://sisiruowan.github.io/index.xml" title="永不满足的唐格拉底" type="application/atom+xml" />
 
 
@@ -66,6 +71,8 @@
 
 
 
+<link rel="stylesheet" href="//cdn.bootcss.com/video.js/6.2.8/alt/video-js-cdn.min.css" />
+
 <link rel="stylesheet" href="https://sisiruowan.github.io/css/bundle.css" />
 
 
@@ -99,7 +106,7 @@
   <header class="site-header">
   <img class="avatar" src="https://sisiruowan.github.io/img/avatar.jpg" alt="Avatar">
   
-  <h1 class="title">永不满足的唐格拉底</h1>
+  <h2 class="title">永不满足的唐格拉底</h2>
   
   <p class="subtitle">与其做一头心满意足的猪，不如做不满足的苏格拉底。——塔奇克马</p>
   <button class="menu-toggle" type="button">
@@ -114,9 +121,9 @@
       
         <li class="menu-item
             
+            
+            
               is-active
-            
-            
             ">
             <a href="https://sisiruowan.github.io/">首页</a>
           </li>
@@ -221,7 +228,7 @@
 
   <section class="main post-list">
     <header class="list-header offscreen">
-      <h2 class="list-label">All Posts</h2>
+      <h2 class="list-label">Posts List</h2>
     </header>
     
     
@@ -395,6 +402,30 @@ cd到clone的repo目录 执行 virtualenv venv source venv/bin/activate pip inst
 </footer>
 
 
+
+<script async src="//cdn.bootcss.com/video.js/6.2.8/alt/video.novtt.min.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\[','\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+      extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    }
+  });
+</script>
+<script type="text/x-mathjax-config">
+  // Fix <code> tags after MathJax finishes running. This is a
+  // hack to overcome a shortcoming of Markdown. Discussion at
+  // https://github.com/mojombo/jekyll/issues/199
+  MathJax.Hub.Queue(() => {
+    MathJax.Hub.getAllJax().map(v => v.SourceElement().parentNode.className += ' has-jax');
+  });
+</script>
 
 <script src="https://sisiruowan.github.io/js/bundle.js"></script>
 
