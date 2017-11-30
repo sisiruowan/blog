@@ -1,4 +1,4 @@
-baseURL = "http://localhost:1313"
+baseURL = "https://sisiruowan.github.io/"
 languageCode = "en"
 title = "永不满足的唐格拉底"
 theme = "nuo"
