@@ -50,7 +50,7 @@ copyright = "© This post is licensed under a Creative Commons Attribution-NonCo
 [params]
   author = "Alex Tang"
   avatar = "/img/avatar.jpg"
-  seotitle = "Hugo Blog (SEO Version)"
+  seotitle = "永不满足的唐格拉底"
   subtitle = "与其做一头心满意足的猪，不如做不满足的苏格拉底。——塔奇克马"
   description = "记录生活与思考，分享点有价值的东西，做好奇心的播种者。"
   paginate = 10
